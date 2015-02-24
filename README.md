@@ -1,5 +1,7 @@
 VidCoin Android SDK
 ===============
+*Coming soon!*
+<!---
 ##Download and install
 
 [Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.0.0/VidCoin-Android-SDK.zip)
@@ -18,3 +20,4 @@ VidCoin Android SDK
 ###v1.0.0
 *(Released on 24 Feb. 2015)*
 - First public release
+-->
