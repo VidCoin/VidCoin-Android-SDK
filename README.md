@@ -11,12 +11,18 @@ VidCoin Android SDK
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
+| 1.1.3 | 10 |
 | 1.1.2 | 10 |
 | 1.1.1 | 10 |
 | 1.1.0 | 10 |
 | 1.0.0 | 10 |
 
 ##Changelog
+
+###v1.1.3
+*(Released on 03 Sep. 2015)*
+
+• Overall stability improvements
 
 ###v1.1.2
 *(Released on 25 Aug. 2015)*
