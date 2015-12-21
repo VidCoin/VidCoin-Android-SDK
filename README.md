@@ -7,7 +7,12 @@ VidCoin Android SDK
 ##Preview
 ![VidCoin Mobile Overlay](https://googledrive.com/host/0B6TMHf2nEKbFdFQxTjJJaGZUWm8 "VidCoin Mobile Overlay")
 --->
-##Supported Android APIs
+##Additional Informations
+
+###Deprecations
+Versions **1.1.0 and before** have been disabled. For the maximum compatibilty, make sure your app runs the latest version available.
+
+###Supported Android APIs
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
