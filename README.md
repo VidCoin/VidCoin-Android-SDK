@@ -9,9 +9,6 @@ VidCoin Android SDK
 --->
 ##Additional Informations
 
-###Deprecations
-Versions **1.1.0 and before** have been disabled. For the maximum compatibilty, make sure your app runs the latest version available.
-
 ###Supported Android APIs
 
 | SDK version  | Minimum Android API |
@@ -24,6 +21,9 @@ Versions **1.1.0 and before** have been disabled. For the maximum compatibilty, 
 | 1.1.1 | 10 |
 | 1.1.0 | 10 |
 | 1.0.0 | 10 |
+
+###Deprecations
+Versions **1.1.0 and before** have been disabled. For the maximum compatibilty, make sure your app runs the latest version available.
 
 ##Changelog
 
