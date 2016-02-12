@@ -38,43 +38,43 @@ Versions **1.1.0 and before** have been disabled. Make sure your app runs the la
 ###v1.1.6
 *(Released on 09 Dec. 2015)*
 
-• Overall stability improvements
+* Overall stability improvements
 
 ###v1.1.5
 *(Released on 10 Nov. 2015)*
 
-• Overall stabilization and improvements
+* Overall stabilization and improvements
 
 ###v1.1.4
 *(Released on 24 Sep. 2015)*
 
-• Overall stabilization and improvements
+* Overall stabilization and improvements
 
 ###v1.1.3
 *(Released on 03 Sep. 2015)*
 
-• Overall stability improvements
+* Overall stability improvements
 
 ###v1.1.2
 *(Released on 25 Aug. 2015)*
 
-• Overall stabilization and improvements
+* Overall stabilization and improvements
 
 ###v1.1.1
 *(Released on 27 Jul. 2015)*
 
-• Improved video quality handling fo better user experience
+* Improved video quality handling fo better user experience
 
 ###v1.1.0
 *(Released on 12 May. 2015)*
 
-• More efficient video caching
-• Speed improvements
-• Reduced memory footprint
-• Improved player performance
-• Better tracking for better ad serving
-• Improved network handling
-• Stabilized UI
+* More efficient video caching
+* Speed improvements
+* Reduced memory footprint
+* Improved player performance
+* Better tracking for better ad serving
+* Improved network handling
+* Stabilized UI
 
 **Important:**
 
@@ -83,4 +83,4 @@ If you're **updating from a previous SDK version**, make sure to read **the Upgr
 ###v1.0.0
 *(Released on 13 Mar. 2015)*
 
-• First public release
+* First public release
