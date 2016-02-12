@@ -29,7 +29,7 @@ Versions **1.1.0 and before** have been disabled. Make sure your app runs the la
 ##Changelog
 
 ###v1.2.0
-*(Released on 11 Jan. 2016)*
+*(Released on 11 Feb. 2016)*
 
 * Updated for compatibility with latest Google PlayServices
 * Discontinuing support for ADT and Eclipse, following Google dropping support for this platform
