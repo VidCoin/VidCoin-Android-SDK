@@ -3,10 +3,10 @@ VidCoin Android SDK
 ##Download and install
 
 [Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.2.0/VidCoin-Android-SDK.zip)
-<!---
+
 ##Preview
-![VidCoin Mobile Overlay](https://googledrive.com/host/0B6TMHf2nEKbFdFQxTjJJaGZUWm8 "VidCoin Mobile Overlay")
---->
+![VidCoin Mobile Overlay](https://googledrive.com/host/0Bwu-tkR-jL-5V2NRaV8xejg4dFE "VidCoin Mobile Overlay")
+
 ##Additional Informations
 
 ###Supported Android APIs
