@@ -2,7 +2,7 @@ VidCoin Android SDK
 ===============
 ##Download and install
 
-[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.2.2/VidCoin-Android-SDK.zip)
+[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.3.0/VidCoin-Android-SDK.zip)
 
 ##Preview
 ![VidCoin Mobile Overlay](https://d3rud9259azp35.cloudfront.net/preview/android.png "VidCoin Mobile Overlay")
@@ -13,6 +13,7 @@ VidCoin Android SDK
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
+| 1.3.0 | 10 |
 | 1.2.2 | 10 |
 | 1.2.1 | 10 |
 | 1.2.0 | 10 |
@@ -29,6 +30,13 @@ VidCoin Android SDK
 Versions **1.1.0 and before** have been disabled. Make sure your app runs the latest version available for maximum compatibility.
 
 ##Changelog
+
+###v1.3.0
+*(Released on 25 Oct. 2016)*
+
+* New improved UI for better user experience, with vertical ads support, lighter memory impact and many other improvements
+* Overall stabilization and improvements
+
 
 ###v1.2.2
 *(Released on 28 Jul. 2016)*
