@@ -2,7 +2,7 @@
 
 ![Vidcoin](https://d3rud9259azp35.cloudfront.net/documentation/Vidcoin-Logo.png)
 
-SDK version: 1.3.0					
+SDK version: 1.3.1					
 Manager: https://manager.vidcoin.com			
 Contact: publishers@vidcoin.com			
 
@@ -35,7 +35,7 @@ If you want to reward your users with items or currency, you will have more sett
 *Info: the sdk was built using Gradle 1.2.3, and requires a deployment target ≥ Android 2.3.3 (GINGERBREAD_MR1)*		
 
 ### Step 1: Getting the sdk
-Download and open the zip file from Github: [https://github.com/VidCoin/VidCoin-Android-SDK](https://github.com/VidCoin/VidCoin-Android-SDK)
+Download and open the zip file from Github :  [https://github.com/VidCoin/VidCoin-Android-SDK](https://github.com/VidCoin/VidCoin-Android-SDK)
 
 ### Step 2: Adding and configuring the sdk in the project
 - Add these lines to your app’s build.gradle:
@@ -55,8 +55,8 @@ dependencies {
 	compile 'com.mcxiaoke.volley:library:1.0.10'
 	compile 'com.google.code.gson:gson:2.3'
 	compile 'com.google.android.gms:play-services-ads:7.0.0'
-	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.3.0@aar'
-	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.3.0@aar'
+	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.3.1@aar'
+	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.3.1@aar'
 }
 ```
 - Sync your project with gradle files and it should build correctly
@@ -81,7 +81,6 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		// Your custom initialisation
 		mVidCoin.init(this,  "yourGameId");
-		return true;
    	}
 }
 ```
@@ -118,7 +117,6 @@ public class MainActivity extends Activity implements VidCoinCallBack {
 	public void onCreate(Bundle savedInstanceState) {
 		// Your custom initialisation
 		mVidCoin.init(this, "yourGameId", this);
-		return true;
 	}
 }
 ```
@@ -197,7 +195,7 @@ mVidCoin.playAdForPlacement(parentActivity, "yourPlacementCode", animation);
 Where `parentActivity` is an instance of the parent activity that will be the parent of the video player. You can pass an animation as an int, referring to an animation.xml file into the res folder of your app. If you want to use the default animation, you can pass -1. If a video is ready to be played for this placement, the player will appear and the video will start.
 
 ### Step 8: Using VidCoinCallBack (optional)
-If you want to be notified of actions happening in the sdk, you can set an object to be Vidcoin’s callback (as seen in step 5). Your object can then implement some (or all) of  the following methods :
+If you want to be notified of actions happening in the sdk, you can set an object to be Vidcoin’s callback (as seen in step 4). Your object can then implement some (or all) of  the following methods :
 
 - This method will be called regularly, whenever the available video campaigns change:
 ```java
@@ -242,7 +240,7 @@ You can access the same information as the previous method, but in this case, th
 The value associated to the `reward` key contains the amount of your in-game currency that was *actually* credited to the user on the server side. Note that this method will always be called after the previous callback method `vidcoinViewDidDisappearWithViewInformation`.
 
 ### Step 9: Proguard Rules (optional)
-If you use Proguard in your release process,you should add the following rules in your *proguard-rules.pro* file:  
+If you use Proguard in your release process,you should add the following rules in your  *proguard-rules.pro* file:  
 ```
 -keepattributes Signature
 -keepattributes *Annotation*
