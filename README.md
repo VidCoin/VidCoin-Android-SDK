@@ -15,6 +15,7 @@ VidCoin Android SDK
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
+| 1.3.2 | 10 |
 | 1.3.1 | 10 |
 | 1.3.0 | 10 |
 | 1.2.2 | 10 |
@@ -33,6 +34,10 @@ VidCoin Android SDK
 Versions **1.1.0 and before** have been disabled. Make sure your app runs the latest version available for maximum compatibility.
 
 ##Changelog
+
+###v1.3.2
+*(Released on 20 Feb. 2017)*
+- Overall stabilization and improvements
 
 ###v1.3.1
 *(Released on 23 Nov. 2016)*
