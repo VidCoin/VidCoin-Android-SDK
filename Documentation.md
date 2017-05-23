@@ -1,10 +1,10 @@
 # Vidcoin Android SDK - QuickStart Guide
 
-![Vidcoin](https://d3rud9259azp35.cloudfront.net/documentation/Vidcoin-Logo.png)
+![Vidcoin](https://documentation.vidcoin.com/images/Vidcoin-Logo.png)
 
-SDK version: 1.3.2					
-Manager: https://manager.vidcoin.com			
-Contact: publishers@vidcoin.com			
+SDK version: 1.3.3        
+Manager: https://manager.vidcoin.com        
+Contact: publishers@vidcoin.com        
 
 ## Overview						
 Vidcoin Android SDK enables you to broadcast videos in your apps in order to give users access to restricted content or to obtain virtual currency for free.
@@ -53,8 +53,8 @@ dependencies {
 	compile 'com.mcxiaoke.volley:library:1.0.10'
 	compile 'com.google.code.gson:gson:2.3'
 	compile 'com.google.android.gms:play-services-ads:7.0.0'
-	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.3.1@aar'
-	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.3.1@aar'
+	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.3.3@aar'
+	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.3.3@aar'
 }
 ```
 - Sync your project with gradle files and it should build correctly
