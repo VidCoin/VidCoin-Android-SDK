@@ -1,8 +1,7 @@
 # Vidcoin Android SDK - QuickStart Guide
 
-![Vidcoin](https://documentation.vidcoin.com/images/Vidcoin-Logo.png)
-
-SDK version: 1.3.8        
+![Vidcoin](images/Vidcoin-Logo.png)
+SDK version: 1.4.0        
 Manager: https://manager.vidcoin.com        
 Contact: publishers@vidcoin.com        
 
@@ -30,7 +29,7 @@ If you want to reward your users with items or currency, you will have more sett
 	- Callback URL (Optional): URL that will be used to validate the transaction on your servers.		
 
 ## Setting up the framework in your app
-*Info: the sdk was built using Gradle 1.2.3, and requires a deployment target ≥ Android 2.3.3 (GINGERBREAD_MR1)*		
+*Info: the sdk was built using Gradle 1.2.3, and requires a deployment target ≥ Android 4.0 (ICE_CREAM_SANDWICH)*		
 
 ### Step 1: Getting the sdk
 Download and open the zip file from Github :  [https://github.com/VidCoin/VidCoin-Android-SDK](https://github.com/VidCoin/VidCoin-Android-SDK)
@@ -53,8 +52,8 @@ dependencies {
 	compile 'com.mcxiaoke.volley:library:1.0.10'
 	compile 'com.google.code.gson:gson:2.3'
 	compile 'com.google.android.gms:play-services-ads:7.0.0'
-	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.3.3@aar'
-	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.3.3@aar'
+	compile 'com.vidcoin.sdkandroid.core:sdkandroid:vidcoin:1.4.0@aar'
+	compile 'com.vidcoin.sdkandroid:sdkandroidnative:vidcoin:1.4.0@aar'
 }
 ```
 - Sync your project with gradle files and it should build correctly
@@ -86,7 +85,7 @@ public class MainActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		// Your custom initialisation
 		mVidCoin.init(this,  "yourGameId");
-   	}
+	}
 }
 ```
 
@@ -96,37 +95,85 @@ For more details about the parameters, please refer to the javadoc. In order for
 public class MainActivity extends Activity {
 	@Override
 	protected void onStart() {
-   		super.onStart();
-         mVidCoin.onStart();
+		super.onStart();
+		mVidCoin.onStart();
 	}
 
 	@Override
 	protected void onStop() {
-   		super.onStop();
-   		mVidCoin.onStop();
+		super.onStop();
+		mVidCoin.onStop();
 	}
 }
 ```
 
 Vidcoin uses a callback system in order to notify your app of the SDK’s state. You have two ways to set your callback class:
 
-- Start the sdk as described above, and assign the callback class later. This lets you use a different class than the object calling the start method as the callback class:
+- Start the sdk as described above, and assign the callback class later :
 ```java
 mVidCoin.init(this, "yourGameId");
 [...]
-mVidCoin.setVidCoinCallBack(yourCallBackInstance);
+mVidCoin.setVidCoinCallBack("placementCode", yourCallBackInstance);
 ```
-- Start the framework and assign the delegate at the same time:
+A callback instance is registered with a placement code.
+You can also attach the callback when you request an ad for a given placement.
+
+- Start the framework and assign the delegate when you request an ad later :
 ```java
 public class MainActivity extends Activity implements VidCoinCallBack {
 	public void onCreate(Bundle savedInstanceState) {
 		// Your custom initialisation
-		mVidCoin.init(this, "yourGameId", this);
+		mVidCoin.requestAdForPlacement("placementCode", yourCallBackInstance);
 	}
 }
 ```
 
 In any case, make sure the callback instance that you give as a parameter implements `VidCoinCallBack` as above. Assigning a callback instance to your Vidcoin instance is a simple way to get notified when there is a status updated, or when a video is presented / dismissed. For more information on `VidCoinCallBack` and the available methods, please refer to the associated sections of this document and the Javadoc.
+
+### Step 4 (bis) : Start the SDK with GDPR info
+Your application has to get the user consent before you init the SDK otherwise he will not be targeted. Publisher must controls the GDPR consent process.
+
+There are 2 parameters for GDPR:
+
+| Key  | Values | Description |
+| :-------------: | :-------------: | :-------------: |
+| hasUserConsent | YES/NO | Is the user has given his consent to be tracked. The default value is false|
+| isGDPRApplicable | YES/NO | Is the user in country with GDPR. The default value is true |
+
+To change the default value on the sdk initialization you can use two provided parameters :
+
+```java
+public class MainActivity extends Activity {
+	public void onCreate(Bundle savedInstanceState) {
+		// Your custom initialisation
+		mVidCoin.init(this,  "yourGameId", true, true);
+	}
+}
+```
+
+Here is the method signature :
+
+```java
+public void init(Context parentContext, String appId, boolean hasUserConsent, boolean isGDPRApplicable)
+```
+
+### Step 5: Update GDPR status
+You can update the status of the user consent.
+
+To update the user consent:
+
+```java
+mVidCoin.setUserConsent(true);
+```
+
+To update the user GDRP applicable:
+
+```java
+mVidCoin.setGDPRApplicable(true);
+```
+
+These methods must be called after the `init` if you want to change the user's status consent.
+
 
 ### Optional step: Enable logging
 In addition to implementing the VidCoinCallBack, you can enable extra logging by making a call to the following method:
@@ -137,18 +184,14 @@ mVidCoin.setVerboseTag(true);
 
 With this command, you will be informed of all the sdk actions and state.
 
-**Notice:** it is recommanded that you set the verbose tag to false before releasing your app, as it serves strictly to debug purposes.
+**Notice:** it is recommended that you set the verbose tag to false before releasing your app, as it serves strictly to debug purposes.
 
-### Step 5: Update the user information
-It’s important that you send us as much information on the user as possible, so we can target the ads appropriately. The easy way to do this is the following:
+### Step 6: Update the user information
+Here is the way to send us information about the user.
 
 ```java
 Map<VidCoinBase.VCUserInfos, String> userInfos = new HashMap<VidCoinBase.VCUserInfos, String>();  
 
-userInfos.put(VidCoinBase.VCUserInfos.VC_USER_GENDER,
-VidCoinBase.VCUserGender.VC_USER_GENDER_MALE.toString());
-
-userInfos.put(VidCoinBase.VCUserInfos.VC_USER_BIRTH_YEAR, "1980");
 userInfos.put(VidCoinBase.VCUserInfos.VC_USER_APP_ID, "UserName");
 
 mVidCoin.setUserInfos(userInfos);
@@ -158,27 +201,31 @@ Or, with static import:
 
 ```java
 import com.vidcoin.sdkandroid.core.VidCoinBase.VCUserInfos;
-import static com.vidcoin.sdkandroid.core.VidCoinBase.VCUserGender.VC_USER_GENDER_MALE;
 import static com.vidcoin.sdkandroid.core.VidCoinBase.VCUserInfos.VC_USER_APP_ID;
-import static com.vidcoin.sdkandroid.core.VidCoinBase.VCUserInfos.VC_USER_BIRTH_YEAR;
-import static com.vidcoin.sdkandroid.core.VidCoinBase.VCUserInfos.VC_USER_GENDER;
 
 Map<VCUserInfos, String> userInfos = new HashMap<VCUserInfos, String>();
-userInfos.put(VC_USER_GENDER, VC_USER_GENDER_MALE.toString());
-userInfos.put(VC_USER_BIRTH_YEAR, "1980");       
 userInfos.put(VC_USER_APP_ID, "UserName");
 mVidCoin.setUserInfos(userInfos);
 ```
 
-You can pass any of these 3 key-value pairs, all keys and values being String objects:
+You can pass any of these key-value pairs, all keys and values being String objects.
 
 | Key | Values | Description |
 | :-------------: | :-------------: | :-------------: |
 | VC_USER_APP_ID | String | This is the string you use to identify the user in your app. This will be used in case you implement a server callback. |
-| VC_USER_BIRTH_YEAR | String | The birth year of the user. |
-| VC_USER_GENDER | VC_USER_GENDER_MALE or VC_USER_GENDER_FEMALE | A string to specify the user’s gender. Any other value will be ignored. |
 
-### Step 6: Check if a video is available
+### Step 7: Request for an ad
+
+Once you want to request an ad, you can call :
+
+```java
+mVidcoin.requestAdForPlacement("placementCode", vidcoinCallback);
+```
+
+You should pass your placement code and the callback. You can use the same callback for multiple request and you will be able to dispatch notification events about campaigns updates thanks to the `placementCode`. See below.
+
+
+### Step 8: Check if a video is available
 You may want to know if a video is available for a given placement. For example, you shouldn’t display a button inviting the user to watch a video if there is none in cache. Calling the class method `videoIsAvailableForPlacement()` is the way to go:
 
 ```java
@@ -190,7 +237,7 @@ if (videoIsAvailable) {
 
 This method will return a `boolean`, equal to `true` if a video is ready to be played for the placement you passed as parameter, and `false` otherwise.
 
-### Step 7: Play a video
+### Step 9: Play a video
 You can present a video to the user by calling the following method:
 
 ```java
@@ -199,12 +246,12 @@ mVidCoin.playAdForPlacement(parentActivity, "yourPlacementCode", animation);
 
 Where `parentActivity` is an instance of the parent activity that will be the parent of the video player. You can pass an animation as an int, referring to an animation.xml file into the res folder of your app. If you want to use the default animation, you can pass -1. If a video is ready to be played for this placement, the player will appear and the video will start.
 
-### Step 8: Using VidCoinCallBack (optional)
+### Step 10: Using VidCoinCallBack (optional)
 If you want to be notified of actions happening in the sdk, you can set an object to be Vidcoin’s callback (as seen in step 4). Your object can then implement some (or all) of  the following methods :
 
 - This method will be called regularly, whenever the available video campaigns change:
 ```java
-void vidCoinCampaignsUpdate() {
+void vidCoinCampaignsUpdate(String placementCode) {
 	// Campaigns have changed (e.g. a video has been downloaded, etc.)
 }
 ```
@@ -244,7 +291,7 @@ You can access the same information as the previous method, but in this case, th
 
 The value associated to the `reward` key contains the amount of your in-game currency that was *actually* credited to the user on the server side. Note that this method will always be called after the previous callback method `vidcoinViewDidDisappearWithViewInformation`.
 
-### Step 9: Proguard Rules (optional)
+### Step 11: Proguard Rules (optional)
 If you use Proguard in your release process,you should add the following rules in your  *proguard-rules.pro* file:  
 ```
 -keepattributes Signature
