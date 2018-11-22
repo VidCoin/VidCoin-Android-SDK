@@ -1,6 +1,6 @@
 # Vidcoin Android SDK - QuickStart Guide
 
-![Vidcoin](images/Vidcoin-Logo.png)
+![Vidcoin](https://documentation.vidcoin.com/images/Vidcoin-Logo.png)
 SDK version: 1.4.0        
 Manager: https://manager.vidcoin.com        
 Contact: publishers@vidcoin.com        
