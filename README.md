@@ -2,7 +2,7 @@ VidCoin Android SDK
 ===============
 ## Download and install
 
-[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.4.0/VidCoin-Android-SDK.zip)
+[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.4.1/VidCoin-Android-SDK.zip)
 
 [Online Documentation](https://github.com/VidCoin/VidCoin-Android-SDK/blob/master/Documentation.md)
 
@@ -15,6 +15,7 @@ VidCoin Android SDK
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
+| 1.4.1 | 14 |
 | 1.4.0 | 14 |
 | 1.3.8 | 14 |
 | 1.3.7 | 14 |
@@ -41,9 +42,12 @@ VidCoin Android SDK
 Versions **1.1.0 and before** have been disabled. Make sure your app runs the latest version available for maximum compatibility.
 
 ## Changelog
+### v1.4.1
+*(Released on 20 dec. 2018)*
+- add LAT support
 
 ### v1.4.0
-*(Released on 18 Jan. 2018)*
+*(Released on 22 Nov. 2018)*
 - Overall stabilization and improvements
 - GDPR support
 
