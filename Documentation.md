@@ -249,9 +249,9 @@ Where `parentActivity` is an instance of the parent activity that will be the pa
 ### Step 10: Using VidCoinCallBack (optional)
 If you want to be notified of actions happening in the sdk, you can set an object to be Vidcoin’s callback (as seen in step 4). Your object can then implement some (or all) of  the following methods :
 
-- This method will be called regularly, whenever the available video campaigns change:
+- This method will be called when load campaign is finished:
 ```java
-void vidCoinCampaignsUpdate(String placementCode) {
+  void vidCoinCampaignLoadEnd(String placementCode, boolean campaignAvailable)
 	// Campaigns have changed (e.g. a video has been downloaded, etc.)
 }
 ```
