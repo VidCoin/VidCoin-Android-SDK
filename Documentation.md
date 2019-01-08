@@ -252,7 +252,7 @@ If you want to be notified of actions happening in the sdk, you can set an objec
 - This method will be called when load campaign is finished:
 ```java
   void vidCoinCampaignLoadEnd(String placementCode, boolean campaignAvailable)
-	// Campaigns have changed (e.g. a video has been downloaded, etc.)
+	// Campaign load is end 
 }
 ```
 
