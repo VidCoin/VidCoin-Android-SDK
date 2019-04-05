@@ -43,6 +43,12 @@ VidCoin Android SDK
 Versions **1.1.0 and before** have been disabled. Make sure your app runs the latest version available for maximum compatibility.
 
 ## Changelog
+
+### v1.4.2
+*(Released on 05 apr. 2019)*
+- Fix minor bug
+- The bid is now sent in the attribution trackers
+
 ### v1.4.1
 *(Released on 20 dec. 2018)*
 - add LAT support
