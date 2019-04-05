@@ -15,6 +15,7 @@ VidCoin Android SDK
 
 | SDK version  | Minimum Android API |
 | :-------------: | :-------------: |
+| 1.4.2 | 14 |
 | 1.4.1 | 14 |
 | 1.4.0 | 14 |
 | 1.3.8 | 14 |
