@@ -2,7 +2,7 @@ VidCoin Android SDK
 ===============
 ## Download and install
 
-[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.4.1/VidCoin-Android-SDK-1.4.1.zip)
+[Download the latest release (SDK + Documentation)](https://github.com/VidCoin/VidCoin-Android-SDK/releases/download/v1.4.2/VidCoin-Android-SDK-1.4.2.zip)
 
 [Online Documentation](https://github.com/VidCoin/VidCoin-Android-SDK/blob/master/Documentation.md)
 
